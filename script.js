@@ -1,8 +1,31 @@
 function minDate(dates) {
-  //write you code here
+  for(let i=0; i<dates.length; i++){
+	  let arr = dates[i].split("/").map(Number)
+	  dates[i] = arr
+  }
+  dates.sort((x,y) => {
+	if(x[0] > y[0]){
+		return 1
+	}else if(x[0] < y[0]){
+		return -1
+	}else{
+		if(x[1] > y[1]){
+			return 1
+		}else if(x[1] < y[1]){
+			return -1
+		}else{
+			if(x[2] > y[2]){
+				return 1
+			}else if(x[2] < y[2]){
+				return -1
+			}else{
+				return -1
+			}
+		}
+	}
+  })
+	return dates[0].join("/")
 }
-
-// Do not change the code
 
 var dates = [
   "2023/03/01",
